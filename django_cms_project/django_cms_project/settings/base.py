@@ -25,7 +25,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'admin_dashboard',
     'app',
-    'chat'
+    'chat',
+    'cms'
 ]
 
 MIDDLEWARE = [
@@ -43,6 +44,14 @@ ROOT_URLCONF = 'django_cms_project.urls'
 
 TEMPLATES = [
     {
+        'BACKEND': 'django.template.backends.jinja2.Jinja2',
+        'DIRS': [ os.path.join( BASE_DIR, 'jinja2' ) ],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'environment': 'django_cms_project.jinja2.environment'
+        },
+    },
+    {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [ os.path.join( BASE_DIR, 'templates' ) ],
         'APP_DIRS': True,
@@ -54,7 +63,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
             ],
         },
-    },
+    }
 ]
 
 WSGI_APPLICATION = 'django_cms_project.wsgi.application'
@@ -75,6 +84,10 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+
+# https://docs.djangoproject.com/en/2.1/topics/db/multi-db/
+#DATABASE_ROUTERS = [ 'app.database.router.AuthRouter', 'app.database.router.PrimaryReplicaRouter' ]
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [

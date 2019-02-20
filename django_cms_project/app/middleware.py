@@ -14,5 +14,5 @@ class AppMiddleware:
 
     def __call__( self, request ):
         response = self.get_response( request )
-        print( "Work hard. Have fun. Make history." )
+        print( "\"Tudo posso naquEle que me foratalece\". ( Filipenses 4:13 )" )
         return response

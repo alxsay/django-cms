@@ -9,7 +9,17 @@ data criação: 07/12/2018
 
 """
 
-#from django.contrib import admin
-#from .models import UnidadeConsumidora
+from django.contrib import admin
+from .models import *
 
-#admin.site.register( Empresa )
+admin.site.register( CmsUser )
+admin.site.register( CmsUserMeta )
+admin.site.register( CmsPost )
+admin.site.register( CmsPostMeta )
+admin.site.register( CmsComment )
+admin.site.register( CmsCommentMeta )
+admin.site.register( CmsTerm )
+admin.site.register( CmsTermMeta )
+admin.site.register( CmsTaxonomy )
+admin.site.register( CmsLink )
+admin.site.register( CmsOption )
