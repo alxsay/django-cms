@@ -78,6 +78,9 @@ CHANNEL_LAYERS = {
     },
 }
 
+#CELERY_BROKER_URL = 'amqp://localhost'
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',

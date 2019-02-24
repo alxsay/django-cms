@@ -9,10 +9,11 @@ data criação: 10/12/2018
 
 from django.urls import path 
 from django.views.decorators.csrf import csrf_exempt
-from .views import index, card1, card2
+from .views import index, card1, card2, card3
 
 urlpatterns = [
     path( '', index ),
     path( 'card1/', card1 ),
     path( 'card2/', card2 ),
+    path( 'card3/', card3 ),
 ]
